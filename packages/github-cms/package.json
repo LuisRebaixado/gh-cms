@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "clean": "rm -rdf ./dist",
     "start": "node ./dist/main.js",
     "watch": "ts-node --watch src/main.ts",
     "dev": "ts-node -T src/main.ts",
