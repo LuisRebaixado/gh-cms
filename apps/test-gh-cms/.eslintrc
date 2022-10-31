@@ -1,0 +1,29 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint",
+        "prettier"
+    ],
+    "extends": [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
+        "plugin:promise/recommended",
+        "plugin:optimize-regex/all",
+        "plugin:security/recommended",
+        "plugin:unicorn/recommended",
+        "plugin:jest/recommended"
+    ],
+    "rules": {
+      "no-console":"warn",
+      "prettier/prettier": 2,
+      "unicorn/no-process-exit": "warn"
+    },
+    "env": {
+      "node": true
+    }
+}

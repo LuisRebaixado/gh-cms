@@ -1,0 +1,43 @@
+{
+  "name": "github-cms",
+  "version": "0.0.1",
+  "main": "./dist/main.js",
+  "types": "./dist/main.d.ts",
+  "license": "MIT",
+  "engines": {
+    "node": "^18.12.0"
+  },
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/main.js",
+    "watch": "ts-node --watch src/main.ts",
+    "dev": "ts-node -T src/main.ts",
+    "lint": "eslint . --ext .ts,.js",
+    "prettier-format": "prettier --config .prettierrc.json 'src/**/*.ts' --write"
+  },
+  "devDependencies": {
+    "@tsconfig/node18": "^1.0.1",
+    "@types/node": "^18.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.2.2",
+    "eslint-plugin-optimize-regex": "^1.2.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-security": "^1.5.0",
+    "eslint-plugin-unicorn": "^42.0.0",
+    "jest": "^28.1.0",
+    "prettier": "2.6.2",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "octokit": "^2.0.10"
+  }
+}
