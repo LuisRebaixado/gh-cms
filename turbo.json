@@ -8,6 +8,11 @@
     "lint": {
       "outputs": []
     },
+    "start": {
+      "cache": false,
+      "dependsOn": ["^build"],
+      "env": ["GH_TOKEN"]
+    },
     "dev": {
       "cache": false
     }
