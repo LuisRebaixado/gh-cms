@@ -53,3 +53,17 @@ export const commitFiles = async (parameters: {
     sha: currentCommit.data.sha
   });
 };
+
+export const getLatestFile = async (octokit: Octokit, owner: string, repo: string, branch: string, path: string) => {
+  const { data } = await octokit.rest.repos.getContent({
+    owner,
+    repo,
+    path,
+    ref: `heads/${branch}`,
+    mediaType: {
+      format: "raw"
+    }
+  });
+  if (typeof data !== "string") throw new Error("Path informed isn't a file");
+  return JSON.parse(data);
+};
