@@ -1,4 +1,4 @@
-import { getOctokit, commitFiles } from "github-cms";
+import { getOctokit, commitFiles, getLatestFile } from "github-cms";
 
 const client = getOctokit(process.env["GH_TOKEN"]!);
 const jsonContent = JSON.stringify({
@@ -25,5 +25,11 @@ commitFiles({
     }
   ]
 })
-  .then(() => console.log("sucess"))
+  .then(() => {
+    console.log("sucess creation");
+    getLatestFile(client, "LuisRebaixado", "sturdy-invention", "main", "test.json")
+      .then((response) => console.log("success", response, typeof response))
+      .catch(console.log);
+    return;
+  })
   .catch(console.log);
